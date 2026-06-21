@@ -1,0 +1,52 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-sans: "Inter", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Noto Sans JP", system-ui, sans-serif;
+  color: #1f1828;
+  background: #ffffff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  color: #24172f;
+  background: #ffffff;
+}
+
+::selection {
+  color: #ffffff;
+  background: #9257d9;
+}
+
+.section-shell {
+  @apply mx-auto w-full max-w-7xl px-5 sm:px-6 lg:px-8;
+}
+
+.focus-ring {
+  @apply focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand-600;
+}
+
+.hero-background {
+  background-image: url("/commo2.png");
+  background-position: center 72px;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+@media (min-width: 1024px) {
+  .hero-background {
+    background-image: url("/commo1.png");
+    background-position: center;
+    background-size: contain;
+  }
+}
