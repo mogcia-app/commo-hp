@@ -39,10 +39,10 @@ export default function Home() {
             </nav>
             <a
               href="/contact"
-              className="focus-ring inline-flex items-center justify-center gap-2 rounded-full bg-brand-500 px-5 py-3 text-sm font-bold text-white shadow-sm transition hover:bg-brand-600"
+              className="focus-ring inline-flex items-center justify-center gap-1.5 rounded-full bg-brand-500 px-3 py-1.5 text-[7.5px] font-bold text-white shadow-sm transition hover:bg-brand-600 sm:gap-2 sm:px-5 sm:py-3 sm:text-sm"
             >
               お問い合わせはコチラ
-              <ArrowRight aria-hidden="true" size={17} />
+              <ArrowRight aria-hidden="true" className="h-2.5 w-2.5 sm:h-[17px] sm:w-[17px]" />
             </a>
           </div>
         </div>
@@ -54,7 +54,7 @@ export default function Home() {
         <div className="section-shell grid gap-10 lg:grid-cols-2 lg:items-center">
           <div className="max-w-2xl">
             <p className="text-sm font-bold text-brand-500">Market Shift</p>
-            <h2 className="mt-3 text-3xl font-bold leading-tight text-brand-900 sm:text-4xl">
+            <h2 className="mt-3 text-[22.5px] font-bold leading-tight text-brand-900 sm:text-4xl">
               今、多くの店舗で
               <span className="mx-1 bg-gradient-to-t from-brand-100 via-brand-100 to-transparent px-1">
                 公式LINE
@@ -78,7 +78,7 @@ export default function Home() {
               alt=""
               fill
               sizes="(min-width: 1024px) 50vw, 100vw"
-              className="object-contain p-6"
+              className="scale-110 object-contain p-0"
             />
           </div>
         </div>

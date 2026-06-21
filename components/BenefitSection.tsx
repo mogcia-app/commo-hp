@@ -41,7 +41,7 @@ export default function BenefitSection() {
       <div className="section-shell">
         <div className="max-w-3xl">
           <p className="text-sm font-bold text-brand-500">Merit</p>
-          <h2 className="mt-3 text-3xl font-bold text-brand-900 sm:text-4xl">LINE友だち登録のメリット</h2>
+          <h2 className="mt-3 text-[22.5px] font-bold text-brand-900 sm:text-4xl">LINE友だち登録のメリット</h2>
         </div>
         <div className="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
           {benefits.map((item, index) => (

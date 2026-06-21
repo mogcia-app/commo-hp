@@ -59,7 +59,7 @@ export default function ProblemSection() {
     <section id="problems" className="bg-white py-20 sm:py-24">
       <div className="section-shell">
         <div className="text-center">
-          <h2 className="text-3xl font-bold text-brand-900 sm:text-4xl">
+          <h2 className="text-[15px] font-bold text-brand-900 sm:text-4xl">
             ＼ こんなお悩み ありませんか？ ／
           </h2>
         </div>

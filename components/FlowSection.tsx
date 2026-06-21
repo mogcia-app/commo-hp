@@ -64,7 +64,7 @@ export default function FlowSection() {
               >
                 <h3
                   className={`rounded-full bg-brand-500 px-6 py-3.5 font-bold text-white ${
-                    step.repeatSteps ? "text-xl lg:text-2xl" : "text-lg"
+                    step.repeatSteps ? "text-base sm:text-xl lg:text-2xl" : "text-lg"
                   }`}
                 >
                   {step.title}
