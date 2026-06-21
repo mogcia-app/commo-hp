@@ -50,7 +50,7 @@ export default function FlowSection() {
           </p>
         </div>
 
-        <div className="mt-12 grid gap-6 lg:-mx-10 lg:grid-cols-[1fr_auto_1fr_auto_2.35fr] lg:items-center xl:-mx-16">
+        <div className="mx-auto mt-12 grid max-w-[1320px] gap-6 lg:grid-cols-[0.95fr_auto_0.95fr_auto_2.15fr] lg:items-center">
           {steps.map((step, index) => (
             <div key={index} className="contents">
               <motion.article
