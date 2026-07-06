@@ -21,7 +21,8 @@ export default function PricingSection() {
             transition={{ duration: 0.45 }}
             className="w-full max-w-xl rounded-[2rem] bg-white p-8 text-center text-brand-900 shadow-sm"
           >
-            <p className="text-3xl font-bold">お問い合わせください</p>
+            <p className="text-sm font-bold text-brand-500">月額</p>
+            <p className="mt-2 text-4xl font-black sm:text-5xl">3万円</p>
           </motion.article>
         </div>
       </div>
