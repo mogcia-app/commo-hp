@@ -1,6 +1,5 @@
 import { ArrowRight } from "lucide-react";
 import Image from "next/image";
-import BenefitSection from "@/components/BenefitSection";
 import BrandName from "@/components/BrandName";
 import CapabilitySection from "@/components/CapabilitySection";
 import CTASection from "@/components/CTASection";
@@ -10,11 +9,9 @@ import Hero from "@/components/Hero";
 import PricingSection from "@/components/PricingSection";
 import ProblemSection from "@/components/ProblemSection";
 import UseExampleSection from "@/components/UseExampleSection";
-import WorksSection from "@/components/WorksSection";
 
 const navItems = [
-  { label: "メリット", href: "#benefits" },
-  { label: "できること", href: "#features" },
+  { label: "コンテンツ", href: "#features" },
   { label: "仕組み", href: "#flow" },
   { label: "料金", href: "#pricing" },
   { label: "FAQ", href: "#faq" },
@@ -53,23 +50,21 @@ export default function Home() {
       <section className="bg-white py-20 sm:py-24">
         <div className="section-shell grid gap-10 lg:grid-cols-2 lg:items-center">
           <div className="max-w-2xl">
-            <p className="text-sm font-bold text-brand-500">Market Shift</p>
+            <p className="text-sm font-bold text-brand-500">Relationship Shift</p>
             <h2 className="mt-3 text-[22.5px] font-bold leading-tight text-brand-900 sm:text-4xl">
-              今、多くの店舗で
+              顧客は、
               <span className="mx-1 bg-gradient-to-t from-brand-100 via-brand-100 to-transparent px-1">
-                公式LINE
+                集めるより育てる
               </span>
-              活用が進んでいます
+              時代へ
             </h2>
             <p className="mt-6 text-sm leading-7 text-slate-700 sm:text-base sm:leading-8">
-              公式LINEは単なる連絡ツールではありません。
+              一度利用・来店したお客様との接点は、その場限りで終わらせるにはもったいない資産です。
               <br />
-              予約受付やお問い合わせ対応、クーポン配信、キャンペーン案内などを通じて
-              <br />
-              お客様との継続的な関係づくりができます。
+              commo.は友だち追加後の情報発信、顧客理解、改善運用までをつなげます。
             </p>
             <p className="mt-5 text-base font-bold leading-8 text-brand-900">
-              一度来店したお客様とつながり続けられることが、LINE最大の魅力です。
+              LINEは入口。大切なのは、また思い出してもらえる関係を育てることです。
             </p>
           </div>
           <div className="relative aspect-[4/3] overflow-hidden rounded-[2rem] bg-white">
@@ -93,13 +88,10 @@ export default function Home() {
             </h2>
             <p className="mt-6 text-sm leading-7 text-slate-700 sm:text-base sm:leading-8">
               <BrandName className="font-bold text-brand-900" />
-              は、LINE公式アカウントを活用して、お客様とのつながりを育てるための仕組みづくりをサポートするサービスです。
+              は、LINEを活用して顧客との継続的な接点を設計し、関係を育てるための伴走型プラットフォームです。
             </p>
             <p className="mt-5 text-sm leading-7 text-slate-700 sm:text-base sm:leading-8">
-              公式LINEからの直接予約や既存の予約サイトとの連携も可能
-            </p>
-            <p className="mt-4 text-sm leading-7 text-slate-700 sm:text-base sm:leading-8">
-              さらに、お知らせやキャンペーン情報を定期的配信することでSNSよりも直接的にお客様にアプローチできます
+              ホテル、ゴルフ場、飲食店、美容室など、業種ごとの魅力や来店サイクルに合わせてコンテンツと配信を整えます。
             </p>
             <p className="mt-5 text-base font-bold leading-8 text-brand-900">
               「一度きりのご利用」を、「続くつながり」に変えていく
@@ -119,10 +111,8 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <BenefitSection />
       <FlowSection />
       <CapabilitySection />
-      <WorksSection />
       <UseExampleSection />
       <PricingSection />
       <FaqSection />

@@ -1,56 +1,36 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowRight } from "lucide-react";
+import { ArrowDown, ArrowRight, HeartHandshake } from "lucide-react";
 import BrandName from "@/components/BrandName";
 
 const steps = [
-  {
-    title: "新規集客",
-    image: "/mechanism-attract.png",
-    imageName: "mechanism-attract.png",
-  },
-  {
-    title: "初来店・初利用",
-    image: "/mechanism-first-visit.png",
-    imageName: "mechanism-first-visit.png",
-  },
-  {
-    title: (
-      <>
-        commo.
-        でリピーター化
-      </>
-    ),
-    repeatSteps: [
-      { label: "LINE登録", image: "/mechanism-line-register.png" },
-      { label: "クーポン・情報配信", image: "/mechanism-coupon-delivery.png", labelClassName: "text-xs" },
-      { label: "再来店・予約", image: "/mechanism-return-booking.png" },
-      { label: "リピート化へ", image: "/mechanism-repeat.png" },
-    ],
-  },
+  "集客",
+  "友達追加",
+  "魅力を伝える",
+  "顧客を知る",
+  "関係を育てる",
+  "また利用してもらう",
 ];
 
 export default function FlowSection() {
   return (
     <section id="flow" className="bg-white py-20 sm:py-24">
-      <div className="mx-auto w-full max-w-[1440px] px-5 sm:px-6 lg:px-8">
+      <div className="section-shell">
         <div className="mx-auto max-w-4xl text-center">
-          <p className="text-sm font-bold text-brand-500">Mechanism</p>
+          <p className="text-sm font-bold text-brand-500">Purpose</p>
           <h2 className="mt-3 text-3xl font-bold text-brand-900 sm:text-4xl">
             <BrandName />
-            の仕組み
+            が目指すこと
           </h2>
           <p className="mt-6 text-sm leading-7 text-slate-700 sm:text-base sm:leading-8">
-            一度来てくれたお客様との関係づくりが、これからの店舗経営には欠かせません
+            LINEは手段であり、目的ではありません。
             <br />
-            新規集客は外部媒体、リピーター育成は<BrandName className="font-bold text-brand-900" />
-            <br />
-            それぞれの役割を活かすことで安定した集客と継続的な関係構築を実現します
+            一度の接点からお客様を知り、魅力を届け、また利用したくなる関係を育てます。
           </p>
         </div>
 
-        <div className="mx-auto mt-12 grid max-w-[1320px] gap-6 lg:grid-cols-[0.95fr_auto_0.95fr_auto_2.15fr] lg:items-center">
+        <div className="mx-auto mt-12 grid max-w-6xl gap-4 md:grid-cols-[1fr_auto_1fr_auto_1fr] xl:grid-cols-[1fr_auto_1fr_auto_1fr_auto_1fr_auto_1fr_auto_1fr]">
           {steps.map((step, index) => (
             <div key={index} className="contents">
               <motion.article
@@ -58,64 +38,28 @@ export default function FlowSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-80px" }}
                 transition={{ duration: 0.45, delay: index * 0.05 }}
-                className={`rounded-[2rem] bg-white text-center ${
-                  step.repeatSteps ? "p-6 lg:p-8" : "p-5 lg:p-6"
-                }`}
+                className="rounded-[2rem] border border-slate-100 bg-white p-5 text-center shadow-sm"
               >
-                <h3
-                  className={`rounded-full bg-brand-500 px-6 py-3.5 font-bold text-white ${
-                    step.repeatSteps ? "text-base sm:text-xl lg:text-2xl" : "text-lg"
-                  }`}
-                >
-                  {step.title}
+                <p className="text-xs font-black text-brand-500">STEP {index + 1}</p>
+                <h3 className="mt-3 flex min-h-14 items-center justify-center text-base font-bold leading-6 text-brand-900">
+                  {step}
                 </h3>
-                {step.repeatSteps ? (
-                  <div className="mt-5 grid gap-3 sm:grid-cols-[1fr_auto_1fr_auto_1fr_auto_1fr] sm:items-start">
-                    {step.repeatSteps.map((item, repeatIndex) => (
-                      <div key={item.label} className="contents">
-                        <div>
-                          <div className="relative flex aspect-square items-center justify-center overflow-hidden rounded-2xl bg-neutral-100">
-                            <img
-                              src={item.image}
-                              alt=""
-                              className="h-full w-full object-contain p-3"
-                              onError={(event) => {
-                                event.currentTarget.style.display = "none";
-                              }}
-                            />
-                          </div>
-                          <p className={`mt-3 font-normal leading-5 text-brand-900 ${item.labelClassName ?? "text-sm"}`}>
-                            {item.label}
-                          </p>
-                        </div>
-                        {repeatIndex < step.repeatSteps.length - 1 && (
-                          <div className="flex justify-center pt-0 sm:pt-8">
-                            <ArrowRight className="rotate-90 text-brand-500 sm:rotate-0" aria-hidden="true" size={30} strokeWidth={2.5} />
-                          </div>
-                        )}
-                      </div>
-                    ))}
-                  </div>
-                ) : (
-                  <div className="relative mt-5 flex aspect-[4/3] items-center justify-center overflow-hidden rounded-3xl bg-neutral-100">
-                    <img
-                      src={step.image}
-                      alt=""
-                      className="h-full w-full object-contain p-5"
-                      onError={(event) => {
-                        event.currentTarget.style.display = "none";
-                      }}
-                    />
-                  </div>
-                )}
               </motion.article>
               {index < steps.length - 1 && (
-                <div className="flex justify-center">
-                  <ArrowRight className="rotate-90 text-brand-500 lg:rotate-0" aria-hidden="true" size={34} strokeWidth={2.5} />
+                <div className="flex items-center justify-center">
+                  <ArrowRight className="hidden text-brand-500 md:block" aria-hidden="true" size={26} strokeWidth={2.5} />
+                  <ArrowDown className="text-brand-500 md:hidden" aria-hidden="true" size={26} strokeWidth={2.5} />
                 </div>
               )}
             </div>
           ))}
+        </div>
+
+        <div className="mx-auto mt-10 flex max-w-3xl items-start gap-4 rounded-[2rem] bg-brand-50 p-6 text-brand-900">
+          <HeartHandshake className="mt-1 shrink-0 text-brand-500" aria-hidden="true" size={26} />
+          <p className="text-sm font-light leading-7 sm:text-base">
+            集めた友だち数ではなく、関係が深まり、また利用したいと思ってもらえる状態をつくることがゴールです。
+          </p>
         </div>
       </div>
     </section>

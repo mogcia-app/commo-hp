@@ -8,11 +8,13 @@ export default function CTASection() {
         <div className="grid gap-8 lg:grid-cols-[1fr_auto] lg:items-center">
           <div>
             <h2 className="text-3xl font-bold text-brand-900 sm:text-4xl">
-              <BrandName />
-              のお問い合わせ・ご相談はこちらから
+              LINEというツールを通じて、
+              <br />
+              一度きりの利用を、継続する関係へ。
             </h2>
             <p className="mt-5 max-w-2xl text-base leading-8 text-slate-600">
-              お気軽にご連絡ください
+              <BrandName className="font-bold text-brand-900" />
+              が、顧客との関係づくりを伴走します。
             </p>
           </div>
           <a

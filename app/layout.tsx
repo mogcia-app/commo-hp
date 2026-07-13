@@ -4,11 +4,11 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "commo. | 顧客は、集めるより育てる時代へ",
   description:
-    "LINE公式アカウントの構築から予約導線づくり、配信運用、リピーター施策まで、commo.がまるっとサポートします。",
+    "LINEを活用し、顧客との継続的な接点づくり、情報発信、運用改善を通じてリピーター化を支援する伴走型の顧客育成プラットフォームです。",
   openGraph: {
     title: "commo. | 顧客は、集めるより育てる時代へ",
     description:
-      "予約・来店型ビジネスのLINE公式アカウント活用、予約導線、クーポン配信、リピーター施策を支援します。",
+      "一度利用・来店したお客様と継続的につながり、関係を育て、また利用したくなる流れをつくるLINE運用プラットフォームです。",
     type: "website",
     locale: "ja_JP",
     siteName: "commo.",

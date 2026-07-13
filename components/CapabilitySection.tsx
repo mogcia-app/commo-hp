@@ -1,64 +1,25 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { Bot, Database, LineChart, MessagesSquare, Tags, Users } from "lucide-react";
 import BrandName from "@/components/BrandName";
 
-const capabilities = [
-  {
-    title: "自社独自予約サイト",
-    text: "外部媒体だけに頼らず、自社で予約を受けられる導線を整えます。",
-    images: [
-      "/apability-reservation-site-1.png",
-      "/apability-reservation-site-2.png",
-      "/apability-reservation-site-3.png",
-    ],
-    adminImage: "/capability-admin-dashboard.png",
-  },
-  {
-    title: "メッセージ配信",
-    text: "お知らせやキャンペーン情報を、友だち登録済みのお客様へ直接届けます。",
-    images: ["/capability-message-delivery.png"],
-  },
-  {
-    title: "個別チャット",
-    text: "予約前の相談やお問い合わせにも対応しやすく、お客様との距離を近づけます。",
-    images: ["/capability-chat.png"],
-  },
-  {
-    title: "リッチメニューの作成",
-    text: "予約、クーポン、問い合わせなど、必要な導線をLINE内でわかりやすく整理します。",
-    images: ["/capability-rich-menu.png"],
-  },
-  {
-    title: "クーポン・キャンペーン配信",
-    text: "再来店につながる特典や企画を配信し、継続的な来店のきっかけをつくります。",
-    images: ["/capability-coupon-campaign.png"],
-  },
+const miniPageItems = [
+  { title: "3分でわかる施設紹介", image: "/a.png" },
+  { title: "朝食へのこだわり", image: "/b.png" },
+  { title: "客室タイプ", image: "/c.png" },
+  { title: "周辺情報", image: "/d.png" },
+  { title: "イベント情報", image: "/e.png" },
+  { title: "LINE限定特典", image: "/a6.png", imageClassName: "object-[center_33%]" },
 ];
 
-const otherSupports = [
-  {
-    title: "公式LINE初期設定サポート",
-    text: (
-      <>
-        アカウント開設後の基本設定やプロフィール整備など
-        <br />
-        運用を始める前の準備をサポートします
-      </>
-    ),
-    image: "/support-line-setup.png",
-  },
-  {
-    title: "登録チラシと配布カード提供",
-    text: (
-      <>
-        店頭や受付で友だち登録を案内しやすいよう
-        <br />
-        チラシや配布カードの制作もご用意できます
-      </>
-    ),
-    image: "/support-flyer-card.png",
-  },
+const adminFeatures = [
+  { title: "LINEユーザー", icon: Users },
+  { title: "アンケート", icon: MessagesSquare },
+  { title: "タグ", icon: Tags },
+  { title: "セグメント", icon: Database },
+  { title: "分析", icon: LineChart },
+  { title: "AI改善提案", icon: Bot },
 ];
 
 export default function CapabilitySection() {
@@ -66,111 +27,71 @@ export default function CapabilitySection() {
     <section id="features" className="bg-white py-20 sm:py-24">
       <div className="section-shell">
         <div className="mx-auto max-w-3xl text-center">
-          <p className="text-sm font-bold text-brand-500">Service</p>
-          <h2 className="mt-3 text-3xl font-bold text-brand-900 sm:text-4xl">
-            <BrandName />
-            でできること
-          </h2>
+          <p className="text-sm font-bold text-brand-500">LINE Mini Page</p>
+          <h2 className="mt-3 text-3xl font-bold text-brand-900 sm:text-4xl">LINEミニページ</h2>
           <p className="mt-5 text-sm leading-7 text-slate-700 sm:text-base sm:leading-8">
-            公式LINEを作るだけで終わらせず、予約・配信・再来店までつながる導線をまとめて整えます。
-            店舗ごとの課題に合わせて、必要な仕組みを無理なく導入できます。
+            ホームページの代わりではなく、今この人に届けたい内容だけを切り出したスマホ専用コンテンツ。
+            店舗・施設の魅力を資産として蓄積し、必要なタイミングで届けます。
           </p>
         </div>
 
-        <div className="mt-12 grid gap-5 lg:grid-cols-2">
-          {capabilities.map((item, index) => (
+        <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          {miniPageItems.map((item, index) => (
             <motion.article
               key={item.title}
               initial={{ opacity: 0, y: 18 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-80px" }}
-              transition={{ duration: 0.45, delay: index * 0.04 }}
-              className={`rounded-[2rem] bg-neutral-100 p-6 shadow-sm ${
-                item.images.length === 3 ? "lg:col-span-2" : ""
-              }`}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.35, delay: index * 0.03 }}
+              className="overflow-hidden rounded-[2rem] border border-slate-100 bg-white shadow-sm"
             >
-              {item.images.length === 3 ? (
-                <>
-                  <div className="grid gap-6 lg:grid-cols-[1fr_220px] lg:items-center">
-                    <div>
-                      <h3 className="text-xl font-bold text-brand-900">{item.title}</h3>
-                      <div className="my-5 grid aspect-[16/7] grid-cols-3 gap-3 rounded-3xl bg-white p-3">
-                        {item.images.map((image) => (
-                          <div key={image} className="relative flex items-center justify-center overflow-hidden rounded-2xl bg-neutral-100">
-                            <img
-                              src={image}
-                              alt=""
-                              className="h-full w-full scale-125 object-contain p-0"
-                              onError={(event) => {
-                                event.currentTarget.style.display = "none";
-                              }}
-                            />
-                          </div>
-                        ))}
-                      </div>
-                      <p className="text-sm leading-7 text-slate-600">{item.text}</p>
-                    </div>
-                    <div className="text-center">
-                      <div className="mx-auto flex aspect-square max-w-[220px] items-center justify-center overflow-hidden rounded-full bg-white">
-                        <img
-                          src={item.adminImage}
-                          alt=""
-                          className="h-full w-full object-contain p-6"
-                          onError={(event) => {
-                            event.currentTarget.style.display = "none";
-                          }}
-                        />
-                      </div>
-                      <p className="mt-3 text-sm font-bold text-brand-900">管理画面付き</p>
-                    </div>
-                  </div>
-                </>
-              ) : (
-                <div className="grid gap-5 sm:grid-cols-[1fr_220px] sm:items-center">
-                  <div>
-                    <h3 className="text-xl font-bold text-brand-900">{item.title}</h3>
-                    <p className="mt-4 text-sm leading-7 text-slate-600">{item.text}</p>
-                  </div>
-                  <div className="relative flex aspect-square items-center justify-center overflow-hidden">
-                    <img
-                      src={item.images[0]}
-                      alt=""
-                      className="h-full w-full object-contain p-0"
-                      onError={(event) => {
-                        event.currentTarget.style.display = "none";
-                      }}
-                    />
-                  </div>
-                </div>
-              )}
+              <div className="aspect-[16/10] overflow-hidden bg-neutral-100">
+                <img src={item.image} alt="" className={`h-full w-full object-cover ${item.imageClassName ?? ""}`} />
+              </div>
+              <div className="p-5">
+                <h3 className="text-lg font-bold text-brand-900">{item.title}</h3>
+                <p className="mt-3 text-sm leading-7 text-slate-600">
+                  お客様の興味や利用タイミングに合わせて、LINE配信から自然に案内できます。
+                </p>
+              </div>
             </motion.article>
           ))}
         </div>
 
-        <div className="mt-16">
-          <h3 className="text-center text-2xl font-bold text-brand-900 sm:text-3xl">
-            ＼ その他にも ／
-          </h3>
-          <div className="mt-8 grid gap-5 lg:grid-cols-2">
-            {otherSupports.map((item) => (
-              <article key={item.title} className="grid gap-5 rounded-[2rem] bg-neutral-100 p-6 shadow-sm sm:grid-cols-[160px_1fr] sm:items-center">
-                <div className="relative flex aspect-square items-center justify-center overflow-hidden rounded-3xl bg-white">
-                  <img
-                    src={item.image}
-                    alt=""
-                    className="h-full w-full object-contain p-4"
-                    onError={(event) => {
-                      event.currentTarget.style.display = "none";
-                    }}
-                  />
-                </div>
-                <div>
-                  <h4 className="text-xl font-bold text-brand-900">{item.title}</h4>
-                  <p className="mt-3 text-sm leading-7 text-slate-600">{item.text}</p>
-                </div>
-              </article>
-            ))}
+        <div className="mt-20 grid gap-8 lg:grid-cols-[1.2fr_0.8fr] lg:items-center">
+          <div className="rounded-[2rem] border border-slate-100 bg-white p-2 shadow-soft">
+            <div className="relative flex aspect-[16/10] items-center justify-center overflow-hidden rounded-[1.5rem] bg-neutral-100">
+              <img
+                src="/capability-admin-dashboard.png"
+                alt="管理画面のイメージ"
+                className="h-full w-full object-contain p-1"
+              />
+            </div>
           </div>
+          <div>
+            <p className="text-sm font-bold text-brand-500">Dashboard</p>
+            <h2 className="mt-3 text-3xl font-bold text-brand-900 sm:text-4xl">管理画面</h2>
+            <p className="mt-5 text-sm leading-7 text-slate-700 sm:text-base sm:leading-8">
+              顧客を知り、配信を分け、反応を見て改善するための管理画面を用意します。
+              管理画面は予約サイト作成時のみ付属し、LINEミニページのみの制作には含まれません。
+            </p>
+            <div className="mt-6 grid gap-3 sm:grid-cols-2">
+              {adminFeatures.map((item) => (
+                <div key={item.title} className="flex items-center gap-3 rounded-2xl bg-neutral-100 p-4">
+                  <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-white text-brand-500">
+                    <item.icon aria-hidden="true" size={20} />
+                  </span>
+                  <span className="text-sm font-bold text-brand-900">{item.title}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        <div className="mx-auto mt-16 max-w-3xl rounded-[2rem] bg-brand-50 p-7 text-center">
+          <p className="text-sm font-bold leading-7 text-brand-900 sm:text-base">
+            <BrandName />
+            は、LINEで情報を届けるだけではなく、魅力を蓄積し、顧客理解と改善につなげるための運用基盤です。
+          </p>
         </div>
       </div>
     </section>

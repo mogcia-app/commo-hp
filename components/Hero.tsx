@@ -1,7 +1,6 @@
 "use client";
 
 import { motion } from "framer-motion";
-import BrandName from "@/components/BrandName";
 
 export default function Hero() {
   return (
@@ -16,17 +15,19 @@ export default function Hero() {
           <p className="text-sm font-bold leading-6 text-brand-600 sm:text-base lg:text-xl">
             顧客は、集めるより育てる時代へ
           </p>
-          <h1 className="mt-3 max-w-3xl text-4xl font-black leading-[1.08] tracking-normal text-brand-900 sm:text-5xl lg:mt-4 lg:text-7xl">
-            <BrandName />
+          <h1 className="mt-3 max-w-3xl text-3xl font-bold leading-[1.2] tracking-normal text-brand-900 sm:text-4xl lg:mt-4 lg:text-6xl">
+            一度の出会いを
+            <br />
+            継続する関係へ
           </h1>
           <p className="mt-4 max-w-xl text-sm leading-7 text-slate-600 sm:text-base lg:mt-6 lg:max-w-2xl lg:text-lg lg:leading-8">
-            LINE公式アカウントの構築から
+            LINEを活用し、
             <br />
-            予約導線づくり クーポン配信
+            顧客との継続的な接点をつくり、
+            <br />
+            業種に合わせた情報発信と運用改善で、
             <br className="hidden sm:block" />
-            リピーター施策まで
-            <br />
-            <BrandName className="font-bold text-brand-900" />がまるっとサポートします
+            リピーターづくりを支援する伴走型プラットフォームです。
           </p>
         </motion.div>
         <div aria-hidden="true" className="hidden lg:block" />
