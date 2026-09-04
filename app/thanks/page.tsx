@@ -4,7 +4,7 @@ import BrandName from "@/components/BrandName";
 
 export const metadata: Metadata = {
   title: "お問い合わせありがとうございました | commo.",
-  description: "commo.へのお問い合わせを受け付けました。",
+  description: "commo.へのお問い合わせを受け付けました",
 };
 
 export default function ThanksPage() {
@@ -12,7 +12,7 @@ export default function ThanksPage() {
     <main className="min-h-screen bg-white">
       <header className="border-b border-slate-100">
         <div className="section-shell flex h-20 items-center">
-          <a href="/" className="focus-ring inline-flex items-center gap-2 rounded-full text-2xl font-black text-brand-900" aria-label="commo. トップへ">
+          <a href="/" className="focus-ring inline-flex items-center gap-2 rounded-full text-2xl font-bold text-brand-900" aria-label="commo. トップへ">
             <Image src="/commo.logo.png" alt="" width={32} height={32} className="h-8 w-8" />
             <BrandName />
           </a>
@@ -26,7 +26,7 @@ export default function ThanksPage() {
             お問い合わせありがとうございました
           </h1>
           <p className="mt-6 text-sm leading-7 text-slate-600 sm:text-base sm:leading-8">
-            内容を確認のうえ、担当者より翌営業日以降にご連絡いたします。
+            内容を確認のうえ担当者より翌営業日以降にご連絡いたします
           </p>
           <a
             href="/"

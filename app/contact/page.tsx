@@ -5,7 +5,7 @@ import BrandName from "@/components/BrandName";
 
 export const metadata: Metadata = {
   title: "お問い合わせ | commo.",
-  description: "commo.へのお問い合わせ・ご相談はこちらからご連絡ください。",
+  description: "commo.へのお問い合わせ・ご相談はこちらからご連絡ください",
 };
 
 const fields = [
@@ -21,7 +21,7 @@ export default function ContactPage() {
     <main className="bg-white">
       <header className="border-b border-slate-100">
         <div className="section-shell flex h-20 items-center">
-          <a href="/" className="focus-ring inline-flex items-center gap-2 rounded-full text-2xl font-black text-brand-900" aria-label="commo. トップへ">
+          <a href="/" className="focus-ring inline-flex items-center gap-2 rounded-full text-2xl font-bold text-brand-900" aria-label="commo. トップへ">
             <Image src="/commo.logo.png" alt="" width={32} height={32} className="h-8 w-8" />
             <BrandName />
           </a>
@@ -33,7 +33,8 @@ export default function ContactPage() {
           <p className="text-sm font-bold text-brand-500">Contact</p>
           <h1 className="mt-3 text-3xl font-bold text-brand-900 sm:text-4xl">お問い合わせ</h1>
           <p className="mt-5 text-sm leading-7 text-slate-600 sm:text-base sm:leading-8">
-            commo<span className="text-brand-500">.</span>に関するご相談・お問い合わせは、以下のフォームよりご連絡ください。
+            <BrandName className="font-bold text-brand-900" />
+            に関するご相談・お問い合わせは以下のフォームよりご連絡ください
           </p>
 
           <div className="mt-10 rounded-[2rem] bg-neutral-100 p-6 sm:p-8">

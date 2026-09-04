@@ -6,17 +6,17 @@ const config: Config = {
     extend: {
       colors: {
         brand: {
-          50: "#F4EEFD",
-          100: "#E9DAFB",
+          50: "#F8F4FF",
+          100: "#EDE3FF",
           400: "#B681EE",
           500: "#A66BE8",
-          600: "#9257D9",
-          900: "#352146"
+          600: "#7F45C6",
+          900: "#2B1A3A"
         }
       },
       boxShadow: {
-        soft: "0 24px 80px rgba(64, 39, 91, 0.12)",
-        glow: "0 20px 60px rgba(166, 107, 232, 0.24)"
+        soft: "0 18px 60px rgba(43, 26, 58, 0.08)",
+        glow: "0 16px 40px rgba(166, 107, 232, 0.18)"
       },
       fontFamily: {
         sans: ["var(--font-sans)", "ui-sans-serif", "system-ui", "sans-serif"]

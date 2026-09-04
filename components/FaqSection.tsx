@@ -1,30 +1,32 @@
-import { ChevronDown } from "lucide-react";
+import BrandName from "@/components/BrandName";
 
 const faqs = [
-  { q: "既にLINEがあります", a: "既存のLINE公式アカウントを活かせます。現在の設定や配信状況を確認し、顧客育成に必要な導線やコンテンツを整えます。" },
-  { q: "予約サイトがあります", a: "問題ありません。commo.は予約サイトを置き換える前提ではなく、既存の導線と組み合わせて継続接点をつくる設計です。" },
-  { q: "どこまで運用してくれますか？", a: "配信企画、配信文作成、画像制作、改善提案まで支援します。LINE運用+ミニページではLINEミニページ制作も含みます。" },
-  { q: "自分たちでもできますか？", a: "はい。運用定着を見据えて、毎月続けやすい配信テーマや改善の型を一緒に整えます。" },
-  { q: "成果は保証されますか？", a: "売上やリピート数の保証はしていません。反応を見ながら改善し、継続利用につながる接点を増やす支援を行います。" },
-  { q: "どんな業種が対象ですか？", a: "ホテル、ゴルフ場、飲食店、美容室など、一度利用・来店したお客様と継続的につながりたい業種が対象です。" },
+  ["すでに使っているLINE公式アカウントでも利用できますか？", <>はい 現在お使いのLINE公式アカウントを活用して<BrandName className="font-bold text-brand-900" />を導入できます 新しくアカウントを作り直す必要はありません</>],
+  ["LINE公式アカウントだけを使う場合と何が違いますか？", <><BrandName className="font-bold text-brand-900" />ではアンケートからお客様を知り属性や興味などで整理して相手に合わせた情報を届けられます LINEミニページや分析AIによるサポートなどその後のコミュニケーションまでまとめて活用できます</>],
+  ["他社やLINE拡張ツールとは何が違いますか？", <>アンケートや顧客管理やセグメント配信など共通する機能もありますが<BrandName className="font-bold text-brand-900" />は顧客を知るところからLINEミニページで詳しく伝え予約や来店や購入など次の行動につなげるところまでをひとつの流れで設計しています</>],
+  ["LINEミニページではどんなページが作れますか？", "キャンペーンやイベントや商品サービス紹介や予約申込みなど目的に合わせたページを作成できます LINEのメッセージだけでは伝えきれない情報をひとつのページにまとめられます"],
+  ["AIでは何ができますか？", "アンケートや顧客情報やこれまでの反応などをもとに顧客の傾向を分析し次のアプローチを提案します 分析結果をもとに一人ひとりに合わせたチャット文章の作成もできます"],
+  ["自分たちで運用できるか不安ですか？", "導入時の設定だけでなくアンケート内容や顧客の分け方や配信内容なども一緒に考えます 運用までお任せいただくこともできます"],
+  ["どんな業種で利用できますか？", "ホテル旅館ゴルフ場飲食店店舗施設をはじめイベント地域活動セミナーなどでもご利用いただいています"],
+  ["LINEの友だちがまだ少なくても導入できますか？", "はい 友だち数が多くなってから始める必要はありません 友だちを増やす導線づくりも含めて現在の状況に合わせた使い方をご提案します"],
+  ["まずは話を聞くだけでも大丈夫ですか？", <>もちろんです 現在のLINE運用やお悩みを伺いながら<BrandName className="font-bold text-brand-900" />でできることをご案内します 導入を前提としたご相談でなくても大丈夫です</>],
 ];
 
 export default function FaqSection() {
   return (
-    <section id="faq" className="bg-white py-20 sm:py-24">
+    <section id="faq" data-page-reveal className="bg-slate-50 py-16 sm:py-20">
       <div className="section-shell">
-        <div className="mx-auto max-w-3xl text-center">
-          <p className="text-sm font-bold text-brand-500">FAQ</p>
-          <h2 className="mt-3 text-3xl font-bold text-brand-900 sm:text-4xl">よくある質問</h2>
+        <div className="max-w-3xl">
+          <p className="text-xs font-bold uppercase tracking-[0.18em] text-brand-500">FAQ</p>
+          <h2 className="mt-4 text-2xl font-bold leading-snug text-brand-900 sm:text-3xl">よくあるご質問</h2>
         </div>
-        <div className="mx-auto mt-10 max-w-3xl space-y-4">
-          {faqs.map((faq) => (
-            <details key={faq.q} className="group rounded-3xl border border-slate-100 bg-white p-6 shadow-sm">
-              <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-left text-base font-bold text-brand-900">
-                {faq.q}
-                <ChevronDown className="shrink-0 text-brand-500 transition group-open:rotate-180" aria-hidden="true" size={22} />
+        <div className="mt-8 divide-y divide-slate-200 rounded-lg border border-slate-200 bg-white">
+          {faqs.map(([q, a]) => (
+            <details key={String(q)} className="group p-5">
+              <summary className="cursor-pointer list-none text-sm font-bold leading-7 text-brand-900">
+                Q {q}
               </summary>
-              <p className="mt-4 text-sm leading-7 text-slate-600">{faq.a}</p>
+              <div className="mt-3 text-sm leading-7 text-slate-600">A {a}</div>
             </details>
           ))}
         </div>

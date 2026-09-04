@@ -1,73 +1,77 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { BarChart3, Clock, Database, MessageCircle, RefreshCw, Send, Sparkles } from "lucide-react";
+import Image from "next/image";
 
 const problems = [
   {
-    id: "line-official",
-    icon: MessageCircle,
-    title: "LINEを開設しただけで活用できていない",
+    id: "kadai-1",
+    image: "/kadai1.png",
+    label: "01",
+    title: "お客様のことが見えていない",
+    text: "誰がなぜ来てくれたのか 次に何を届ければいいのかが見えていない",
   },
   {
-    id: "content",
-    icon: Sparkles,
-    title: "何を配信したら良いか分からない",
+    id: "kadai-2",
+    image: "/kadai2.png",
+    label: "02",
+    title: "LINEをうまく活かせていない",
+    text: "とりあえず配信しているだけで 来店や予約につながっている実感がない",
   },
   {
-    id: "repeat",
-    icon: RefreshCw,
-    title: "リピーターが増えない",
+    id: "kadai-3",
+    image: "/kadai3.png",
+    label: "03",
+    title: "リピーター施策が後回しになっている",
+    text: "新規集客に追われて また来てもらうための接点づくりまで手が回らない",
   },
   {
-    id: "data",
-    icon: Database,
-    title: "顧客情報を活かせていない",
-  },
-  {
-    id: "time",
-    icon: Clock,
-    title: "毎月運用する時間がない",
-  },
-  {
-    id: "send",
-    icon: Send,
-    title: "配信して終わっている",
-  },
-  {
-    id: "touchpoint",
-    icon: BarChart3,
-    title: "お客様との接点が続かない",
+    id: "kadai-4",
+    image: "/kadai4.png",
+    label: "04",
+    title: "何を配信すればいいか分からない",
+    text: "キャンペーン 予約導線 地域の情報 打ち手は必要でも企画に落とし込めない",
   },
 ];
 
 export default function ProblemSection() {
   return (
-    <section id="problems" className="bg-white py-20 sm:py-24">
+    <section id="problems" data-page-reveal className="bg-white py-16 sm:py-20">
       <div className="section-shell">
-        <div className="text-center">
-          <h2 className="text-[15px] font-bold text-brand-900 sm:text-4xl">
-            ＼ こんなお悩み ありませんか？ ／
+        <div className="mx-auto max-w-3xl text-center">
+          <p className="text-xs font-bold uppercase tracking-[0.16em] text-brand-500">Problem</p>
+          <h2 className="mt-4 text-2xl font-bold leading-snug text-brand-900 sm:text-3xl">
+            こんなお悩みありませんか？
           </h2>
+          <p className="mt-5 text-sm leading-7 text-slate-700">
+            LINEも予約導線もある けれどお客様のことが見えていないと次の一手はどうしても勘に頼りがちです
+          </p>
         </div>
-        <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-10 grid gap-5 lg:grid-cols-2">
           {problems.map((item, index) => (
-            <motion.div
+            <motion.article
               key={item.id}
               initial={{ opacity: 0, y: 18 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-80px" }}
               transition={{ duration: 0.45, delay: index * 0.04 }}
-              className="rounded-3xl border border-slate-100 bg-white p-6 text-left shadow-sm transition hover:-translate-y-1 hover:shadow-soft"
+              className="grid min-h-[180px] gap-5 rounded-lg border border-slate-200 bg-white p-5 shadow-[0_14px_40px_rgba(43,26,58,0.05)] sm:grid-cols-[140px_1fr] sm:items-center"
             >
-              <div className="flex items-center gap-3">
-                <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-brand-50 text-brand-500">
-                  <item.icon aria-hidden="true" size={21} strokeWidth={2.4} />
-                </span>
-                <p className="text-sm font-black text-brand-500">{String(index + 1).padStart(2, "0")}</p>
+              <div className="relative aspect-[4/3] overflow-hidden rounded-md bg-brand-50 sm:aspect-square">
+                <Image
+                  src={item.image}
+                  alt=""
+                  fill
+                  sizes="140px"
+                  className="object-contain p-3"
+                />
               </div>
-              <h3 className="mt-5 text-base font-bold leading-7 text-brand-900">{item.title}</h3>
-            </motion.div>
+              <div>
+                <p className="text-xs font-bold text-brand-500">{item.label}</p>
+                <h3 className="mt-2 text-lg font-bold leading-7 text-brand-900">{item.title}</h3>
+                <p className="mt-2 text-sm leading-7 text-slate-600">{item.text}</p>
+              </div>
+            </motion.article>
           ))}
         </div>
       </div>

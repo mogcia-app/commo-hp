@@ -1,135 +1,91 @@
-import { ArrowRight } from "lucide-react";
 import Image from "next/image";
 import BrandName from "@/components/BrandName";
+import CaseSection from "@/components/CaseSection";
 import CapabilitySection from "@/components/CapabilitySection";
 import CTASection from "@/components/CTASection";
+import DifferenceSection from "@/components/DifferenceSection";
 import FaqSection from "@/components/FaqSection";
-import FlowSection from "@/components/FlowSection";
 import Hero from "@/components/Hero";
+import HeroBanner from "@/components/HeroBanner";
+import MiniPageSection from "@/components/MiniPageSection";
+import PageAnimations from "@/components/PageAnimations";
 import PricingSection from "@/components/PricingSection";
 import ProblemSection from "@/components/ProblemSection";
+import SimulationSection from "@/components/SimulationSection";
+import SiteHeader from "@/components/SiteHeader";
+import SupportSection from "@/components/SupportSection";
 import UseExampleSection from "@/components/UseExampleSection";
-
-const navItems = [
-  { label: "コンテンツ", href: "#features" },
-  { label: "仕組み", href: "#flow" },
-  { label: "料金", href: "#pricing" },
-  { label: "FAQ", href: "#faq" },
-];
+import VoiceSection from "@/components/VoiceSection";
 
 export default function Home() {
   return (
     <main>
-      <header className="fixed inset-x-0 top-0 z-50 border-b border-white/70 bg-white/80 backdrop-blur-xl">
-        <div className="section-shell flex h-20 items-center justify-between gap-4">
-          <a href="#" className="focus-ring flex items-center gap-2 rounded-full text-2xl font-black tracking-normal text-brand-900" aria-label="commo. トップへ">
-            <Image src="/commo.logo.png" alt="" width={32} height={32} className="h-8 w-8" priority />
-            <BrandName />
-          </a>
-          <div className="ml-auto flex items-center gap-5">
-            <nav className="hidden items-center justify-end gap-7 lg:flex" aria-label="メインナビゲーション">
-              {navItems.map((item) => (
-                <a key={item.href} href={item.href} className="text-sm font-bold text-slate-600 transition hover:text-brand-600">
-                  {item.label}
-                </a>
-              ))}
-            </nav>
-            <a
-              href="/contact"
-              className="focus-ring inline-flex items-center justify-center gap-1.5 rounded-full bg-brand-500 px-3 py-1.5 text-[7.5px] font-bold text-white shadow-sm transition hover:bg-brand-600 sm:gap-2 sm:px-5 sm:py-3 sm:text-sm"
-            >
-              お問い合わせはコチラ
-              <ArrowRight aria-hidden="true" className="h-2.5 w-2.5 sm:h-[17px] sm:w-[17px]" />
-            </a>
-          </div>
-        </div>
-      </header>
-
+      <PageAnimations />
+      <SiteHeader />
       <Hero />
+      <HeroBanner />
       <ProblemSection />
-      <section className="bg-white py-20 sm:py-24">
-        <div className="section-shell grid gap-10 lg:grid-cols-2 lg:items-center">
-          <div className="max-w-2xl">
-            <p className="text-sm font-bold text-brand-500">Relationship Shift</p>
-            <h2 className="mt-3 text-[22.5px] font-bold leading-tight text-brand-900 sm:text-4xl">
-              顧客は、
-              <span className="mx-1 bg-gradient-to-t from-brand-100 via-brand-100 to-transparent px-1">
-                集めるより育てる
-              </span>
-              時代へ
+      <section id="about" data-page-reveal className="relative overflow-hidden bg-white py-16 sm:py-20">
+        <Image src="/heroco.png" alt="" fill sizes="100vw" className="object-cover object-[center_44%]" />
+        <div className="section-shell relative">
+          <div className="max-w-2xl py-8 sm:py-12">
+            <p className="text-xs font-bold uppercase tracking-[0.16em] text-brand-500">About</p>
+            <h2 className="mt-4 text-2xl font-bold leading-snug text-brand-900 sm:text-3xl">
+              せっかくつながったお客様とその先もつながっていくために
             </h2>
-            <p className="mt-6 text-sm leading-7 text-slate-700 sm:text-base sm:leading-8">
-              一度利用・来店したお客様との接点は、その場限りで終わらせるにはもったいない資産です。
-              <br />
-              commo.は友だち追加後の情報発信、顧客理解、改善運用までをつなげます。
-            </p>
-            <p className="mt-5 text-base font-bold leading-8 text-brand-900">
-              LINEは入口。大切なのは、また思い出してもらえる関係を育てることです。
-            </p>
-          </div>
-          <div className="relative aspect-[4/3] overflow-hidden rounded-[2rem] bg-white">
-            <Image
-              src="/mar.png"
-              alt=""
-              fill
-              sizes="(min-width: 1024px) 50vw, 100vw"
-              className="scale-110 object-contain p-0"
-            />
+            <div className="mt-6 space-y-4 text-sm leading-7 text-slate-700 sm:text-[15px] sm:leading-8">
+              <p>LINEで友だちになってもその人がどんな人で何に興味があるのかまではなかなか見えてきません</p>
+              <p>
+                <BrandName className="font-bold text-brand-900" />はつながったお客様を知るところからはじまります
+              </p>
+              <p>アンケートやLINEでの反応から一人ひとりの興味や目的を知りその人に合った情報を届け次の来店や予約につなげていく</p>
+              <p>友だちを増やして終わりではなくその後の関係を育てていくためのサービスです</p>
+            </div>
           </div>
         </div>
       </section>
-      <section className="bg-white py-20 sm:py-24">
-        <div className="section-shell grid gap-10 lg:grid-cols-2 lg:items-center">
-          <div className="max-w-2xl">
-            <p className="text-sm font-bold text-brand-500">About</p>
-            <h2 className="mt-3 text-3xl font-bold leading-tight text-brand-900 sm:text-4xl">
-              <BrandName />
-              とは？
-            </h2>
-            <p className="mt-6 text-sm leading-7 text-slate-700 sm:text-base sm:leading-8">
-              <BrandName className="font-bold text-brand-900" />
-              は、LINEを活用して顧客との継続的な接点を設計し、関係を育てるための伴走型プラットフォームです。
-            </p>
-            <p className="mt-5 text-sm leading-7 text-slate-700 sm:text-base sm:leading-8">
-              ホテル、ゴルフ場、飲食店、美容室など、業種ごとの魅力や来店サイクルに合わせてコンテンツと配信を整えます。
-            </p>
-            <p className="mt-5 text-base font-bold leading-8 text-brand-900">
-              「一度きりのご利用」を、「続くつながり」に変えていく
-            </p>
-            <p className="mt-3 text-base font-normal leading-8 text-brand-900">
-              それが、<BrandName className="font-bold" />です
-            </p>
-          </div>
-          <div className="relative aspect-[4/3] overflow-hidden rounded-[2rem] bg-white">
-            <Image
-              src="/mak.png"
-              alt=""
-              fill
-              sizes="(min-width: 1024px) 50vw, 100vw"
-              className="object-contain p-6"
-            />
-          </div>
-        </div>
-      </section>
-      <FlowSection />
       <CapabilitySection />
+      <MiniPageSection />
+      <SimulationSection />
       <UseExampleSection />
+      <CaseSection />
+      <VoiceSection />
+      <DifferenceSection />
       <PricingSection />
+      <SupportSection />
       <FaqSection />
       <CTASection />
-      <footer className="bg-white py-10">
+      <footer data-page-reveal className="bg-white py-10">
         <div className="section-shell grid gap-8 border-t border-slate-100 pt-10 lg:grid-cols-[1fr_auto]">
           <div>
-            <a href="#" className="focus-ring inline-flex items-center gap-2 rounded-full text-2xl font-black tracking-normal text-brand-900" aria-label="commo. トップへ">
-              <Image src="/commo.logo.png" alt="" width={36} height={36} className="h-9 w-9" />
+            <a href="#" className="focus-ring inline-flex items-center gap-2 text-xl font-bold tracking-normal text-brand-900" aria-label="commo トップへ">
+              <Image src="/commonewlogo.png" alt="" width={40} height={40} className="h-10 w-10 object-contain" />
               <BrandName />
             </a>
-            <p className="mt-4 text-sm font-bold text-brand-600">顧客は、集めるより育てる時代へ</p>
+            <p className="mt-4 text-sm font-bold text-brand-600">顧客は集めるより育てる時代へ</p>
+            <p className="mt-3 max-w-sm text-sm leading-7 text-slate-600">
+              LINEでつながったお客様を知り届けて次の行動へつなげるためのサービスです
+            </p>
+            <div className="mt-6 flex items-end gap-5">
+              <Image
+                src="/commonewlogo.png"
+                alt=""
+                width={82}
+                height={82}
+                className="ui-float h-20 w-20 object-contain opacity-95 drop-shadow-[0_10px_18px_rgba(43,26,58,0.10)]"
+                aria-hidden="true"
+              />
+              <div className="grid gap-2 pb-2 text-xs font-bold text-brand-700">
+                <span className="rounded-full bg-brand-50 px-3 py-1">知る</span>
+                <span className="rounded-full bg-brand-50 px-3 py-1">届ける</span>
+                <span className="rounded-full bg-brand-50 px-3 py-1">つなげる</span>
+              </div>
+            </div>
           </div>
           <div className="text-sm leading-7 text-slate-600 lg:text-right">
             <p className="font-bold text-brand-900">お問い合わせ</p>
             <p className="mt-2">平日 10:00〜17:00</p>
-            <p>翌営業日にご連絡いたします。</p>
+            <p>翌営業日にご連絡いたします</p>
             <p className="mt-3">TEL: 092-517-9804</p>
             <p>
               <a href="mailto:info@mogcia.jp" className="transition hover:text-brand-600">
