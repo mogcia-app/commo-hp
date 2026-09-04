@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import BrandName from "@/components/BrandName";
+import SiteFooter from "@/components/SiteFooter";
 
 export const metadata: Metadata = {
   title: "お問い合わせありがとうございました | commo.",
@@ -10,10 +11,10 @@ export const metadata: Metadata = {
 export default function ThanksPage() {
   return (
     <main className="min-h-screen bg-white">
-      <header className="border-b border-slate-100">
-        <div className="section-shell flex h-20 items-center">
-          <a href="/" className="focus-ring inline-flex items-center gap-2 rounded-full text-2xl font-bold text-brand-900" aria-label="commo. トップへ">
-            <Image src="/commo.logo.png" alt="" width={32} height={32} className="h-8 w-8" />
+      <header className="border-b border-slate-100 bg-white/88 backdrop-blur-xl">
+        <div className="section-shell flex h-16 items-center">
+          <a href="/" className="focus-ring inline-flex items-center gap-2 text-xl font-bold text-brand-900" aria-label="commo トップへ">
+            <Image src="/commonewlogo.png" alt="" width={40} height={40} className="h-10 w-10 object-contain" />
             <BrandName />
           </a>
         </div>
@@ -30,12 +31,13 @@ export default function ThanksPage() {
           </p>
           <a
             href="/"
-            className="focus-ring mt-10 inline-flex items-center justify-center rounded-full bg-brand-500 px-7 py-4 text-base font-bold text-white shadow-sm transition hover:bg-brand-600"
+            className="focus-ring mt-10 inline-flex items-center justify-center rounded-lg bg-brand-500 px-7 py-3.5 text-sm font-bold text-white transition hover:bg-brand-600"
           >
             トップへ戻る
           </a>
         </div>
       </section>
+      <SiteFooter />
     </main>
   );
 }
